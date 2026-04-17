@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CITAM Rongai Creatives | Community</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        /* CITAM Red & Deep Black Aesthetic */
+        :root {
+            --brand-red: #ff0000;
+            --hover-red: #e60000;
+            --black: #050505;
+            --dark-grey: #121212;
+            --border-color: #2a2a2a;
+            --text-main: #ffffff;
+            --text-secondary: #999999;
+        }
+
+        * {
+            margin: 0; padding: 0; box-sizing: border-box;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--text-main);
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100vh; padding: 40px 20px;
+            overflow-x: hidden; position: relative;
+        }
+
+        /* Ambient Red Background Glow */
+        .bg-glow {
+            position: fixed; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80vw; height: 80vw;
+            background: radial-gradient(circle, rgba(255, 0, 0, 0.08) 0%, transparent 60%);
+            border-radius: 50%; z-index: 0; filter: blur(60px);
+        }
+
+        .container {
+            width: 100%; max-width: 440px; text-align: center;
+            z-index: 1; position: relative;
+        }
+
+        /* --- Header & The Coded Logo --- */
+        .profile { margin-bottom: 50px; }
+
+        .logo-box {
+            display: inline-flex; justify-content: center; align-items: center;
+            width: 110px; height: 110px;
+            background-color: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 10px 40px rgba(255, 0, 0, 0.15);
+            margin-bottom: 25px; padding: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-box:hover { transform: scale(1.05) rotate(2deg); }
+
+        /* Styling for the SVG (Coded Image) */
+        .coded-logo { width: 100%; height: 100%; }
+
+        .profile h1 {
+            font-size: 1.8rem; font-weight: 800;
+            letter-spacing: -1px; margin-bottom: 5px;
+        }
+
+        .profile .creatives-tag {
+            color: var(--brand-red); font-size: 0.95rem;
+            font-weight: 500; letter-spacing: 5px;
+            text-transform: uppercase; margin-bottom: 15px;
+        }
+
+        .divider {
+            height: 2px; width: 60px; background: var(--brand-red);
+            margin: 0 auto 15px auto; border-radius: 2px;
+        }
+
+        .profile p {
+            font-size: 0.9rem; color: var(--text-secondary);
+            max-width: 300px; margin: 0 auto;
+        }
+
+        /* --- Glowing "Pill" Links --- */
+        .links {
+            display: flex; flex-direction: column; gap: 20px;
+        }
+
+        .glow-button {
+            display: flex; align-items: center; justify-content: center;
+            background-color: var(--dark-grey);
+            border: 1px solid var(--border-color);
+            padding: 20px 25px;
+            text-decoration: none; color: var(--text-main);
+            font-weight: 700; text-transform: uppercase;
+            letter-spacing: 1.5px; font-size: 0.85rem;
+            border-radius: 50px; /* Full Pill Shape */
+            position: relative; overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        /* Social Icons within the button */
+        .glow-button i {
+            position: absolute; left: 30px; font-size: 1.3rem;
+            color: var(--brand-red); transition: color 0.3s ease;
+        }
+
+        /* --- Hover State ( The Glow ) --- */
+        .glow-button:hover {
+            background-color: var(--hover-red);
+            border-color: var(--hover-red);
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.65);
+            transform: translateY(-4px) scale(1.02);
+        }
+
+        .glow-button:hover i { color: #ffffff; }
+
+        /* Click State */
+        .glow-button:active {
+            transform: translateY(1px) scale(0.99);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <header class="profile">
+            <div class="logo-box">
+                <svg class="coded-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50,95 C65,85 75,70 75,55 C75,40 65,30 50,15 C35,30 25,40 25,55 C25,70 35,85 50,95 Z" fill="#ff0000"/>
+                    <path d="M50,85 C60,78 67,67 67,55 C67,45 60,38 50,28 C40,38 33,45 33,55 C33,67 40,78 50,85 Z" fill="#8b0000" opacity="0.6"/>
+                    <rect x="47" y="35" width="6" height="40" fill="#ffffff" rx="1"/>
+                    <rect x="35" y="47" width="30" height="6" fill="#ffffff" rx="1"/>
+                </svg>
+            </div>
+            
+            <h1>CITAM RONGAI</h1>
+            <div class="creatives-tag">CREATIVES</div>
+            <div class="divider"></div>
+            <p>Inspiring creativity and building community for the Kingdom.</p>
+        </header>
+
+        <nav class="links">
+            <a href="https://www.instagram.com/citamrongaicreatives/" target="_blank" class="glow-button">
+                <i class="fab fa-instagram"></i> <span>Instagram</span>
+            </a>
+            <a href="https://x.com/RongaiCreatives" target="_blank" class="glow-button">
+                <i class="fab fa-x-twitter"></i> <span>Twitter / X</span>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61579766785524" target="_blank" class="glow-button">
+                <i class="fab fa-facebook"></i> <span>Facebook</span>
+            </a>
+            <a href="https://www.tiktok.com/@citamrongaicreatives?lang=en" target="_blank" class="glow-button">
+                <i class="fab fa-tiktok"></i> <span>TikTok</span>
+            </a>
+        </nav>
+    </div>
+
+</body>
+</html>
